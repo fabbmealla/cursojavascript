@@ -88,10 +88,23 @@ function confirmarHorario(horario) {
         }
 }
 
-saludar ()
-elegirEspecialidad ()
-elegirHorario ()
+function reservarTurno () {
+    saludar () ;
+    elegirEspecialidad () ;
+    elegirHorario () ;
 
+    let otroTurno = confirm("¿Desea reservar otro turno?")
+
+    while (otroTurno) {
+        elegirEspecialidad();
+        elegirHorario();
+        otroTurno = confirm("¿Desea reservar otro turno?");
+    }
+
+    alert("Muchas gracias por haber elegido nuestros servicios. ¡Hasta pronto!");
+}
+
+reservarTurno ()
 
 
 
